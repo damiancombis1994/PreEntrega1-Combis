@@ -1,17 +1,24 @@
 import styles from "./cardproduct.module.css";
+import ButtonCount from "./ButtonCount";
 
 function CardProduct(props){
-const{price, text, img}=props;
+const{price, title, description, pictureUrl}=props;
 
 return(
-    <div class={styles.boxArticulo}> 
+    <div className={styles.boxArticulo}> 
                     <figure>
-                            <img className={styles.fotoVino} src={img} alt="product img"/>
+                            <img className={styles.fotoVino} src={pictureUrl} alt="product img"/>
                     </figure>
                     <div className={styles.boxDetalleArticulo}>
-                        <h4 className={styles.detalleArticulo}>{text}</h4>
-                        <p className={styles.precioArticulo}> ${price}</p>
+                        <h4 className={styles.titleArticulo}>{title}</h4>
+                        <p className={styles.textArticulo}>{description}</p>
+                        <div className={styles.boxPrinceCount}>
+                            <p className={styles.precioArticulo}> ${price}</p>
+                            <ButtonCount />
+                        </div>
+                     
                     </div>
+                    
     </div>
 )
 };

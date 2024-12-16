@@ -26,14 +26,25 @@
     flex-direction: column;
     gap: 10px;  
 }
-.detalleArticulo{
+.titleArticulo{
     width: 100%;
     margin-top:-0.2em;
     font-family: 'Playfair Display SC', serif; 
 }
+.textArticulo{
+    margin-top: -1.5em;
+    font-family: 'Kameron', serif; 
+    font-size: 17px;
+    line-height: 1.2;
+}
 .precioArticulo{
-    width: 100%;
-    margin-top:-0.8em;
+    width: 4em;
+    margin-top:-0.9em;
     font-size: 1.5em;
-    font-family: 'Kameron', serif;
+    font-family: 'Kameron', serif;  
+   
+}
+.boxPrinceCount{
+    display: flex;
+    justify-content: space-between;
 }
