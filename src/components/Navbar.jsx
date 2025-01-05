@@ -13,22 +13,22 @@ return(
 <nav>
 		<ul className={styles.enlaces}>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Tinto</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Tinto</a>
 			</li>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Blanco</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Blanco</a>
 			</li>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Whisky</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Whisky</a>
 			</li>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Vodka</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Vodka</a>
 			</li>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Gin Tonic</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Gin Tonic</a>
 			</li>
             <li className={styles.enlaceDirecto}>
-				<a className={styles.enlaceDirectoContenido}>Otros</a>
+				<a href="#" className={styles.enlaceDirectoContenido}>Otros</a>
 			</li>
         </ul>
 </nav>

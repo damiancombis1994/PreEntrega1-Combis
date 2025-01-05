@@ -1,4 +1,4 @@
-import CardProduct from "./CardProduct";
+import Item from "./Item";
 import GetAsyncData from "../data/GetAsyncData";
 import{useState, useEffect} from "react";
 
@@ -13,7 +13,7 @@ useEffect(()=>{
 },[]);
 
 const list = products.map((prod)=>(
-<CardProduct
+<Item
    key={prod.id}
    price={prod.price}
    title={prod.title}

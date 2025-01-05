@@ -1,0 +1,50 @@
+
+.boxArticulo{
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+.boxArticulo:hover{
+    border: 1px solid rgba(125, 5, 134, 0.756);
+}
+.fotoVino{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+.boxArticulo figure{
+    overflow: hidden;
+}
+.boxArticulo:hover img{
+    transform: scale(1.2);
+}
+.boxDetalleArticulo{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+}
+.titleArticulo{
+    width: 100%;
+    margin-top:-0.2em;
+    font-family: 'Playfair Display SC', serif; 
+}
+.textArticulo{
+    margin-top: -1.5em;
+    font-family: 'Kameron', serif; 
+    font-size: 17px;
+    line-height: 1.2;
+}
+.precioArticulo{
+    width: 4em;
+    margin-top:-0.9em;
+    font-size: 1.5em;
+    font-family: 'Kameron', serif;  
+   
+}
+.boxPrinceCount{
+    display: flex;
+    justify-content: space-between;
+}

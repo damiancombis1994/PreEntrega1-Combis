@@ -1,7 +1,7 @@
-import styles from "./cardproduct.module.css";
+import styles from "./item.module.css";
 import ButtonCount from "./ButtonCount";
 
-function CardProduct(props){
+function Item(props){
 const{price, title, description, pictureUrl}=props;
 
 return(
@@ -22,6 +22,4 @@ return(
     </div>
 )
 };
-
-
-export default CardProduct;
+export default Item;
