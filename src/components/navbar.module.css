@@ -13,6 +13,11 @@
     flex-basis: 10em;
     font-family: 'Playfair Display SC', serif; 
     color: #fafafa;
+    
+}
+.title a{
+    text-decoration: none;
+    color: #fafafa;
 }
 
 .enlaces {

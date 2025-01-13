@@ -1,8 +1,8 @@
 import styles from "./item.module.css";
-import ButtonCount from "./ButtonCount";
+import { Link } from "react-router-dom";
 
 function Item(props){
-const{price, title, description, pictureUrl}=props;
+const{price, title, description, pictureUrl, id}=props;
 
 return(
     <div className={styles.boxArticulo}> 
@@ -14,11 +14,10 @@ return(
                         <p className={styles.textArticulo}>{description}</p>
                         <div className={styles.boxPrinceCount}>
                             <p className={styles.precioArticulo}> ${price}</p>
-                            <ButtonCount />
+                            <Link to={"/item/" + id}><button>Ver detalle</button></Link>
                         </div>
-                     
-                    </div>
-                    
+                       
+                    </div>  
     </div>
 )
 };

@@ -1,35 +1,35 @@
-import Item from "./Item";
 import GetAsyncData from "../data/GetAsyncData";
 import{useState, useEffect} from "react";
-
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+import { GetAsyncItemsByCategory } from "../data/GetAsyncData";
 function ItemListContainer(props){
     const [products, setProducts] = useState([]);
-
+    const { catId } = useParams();
 useEffect(()=>{
-    const respuestaPromise = GetAsyncData();
-    respuestaPromise
-    .then((respuesta)=>setProducts(respuesta))
-    .catch((error)=>alert(error))
-},[]);
+    if (catId === undefined) {
+        const respuestaPromise = GetAsyncData();
+        respuestaPromise
+        .then((respuesta)=>setProducts(respuesta))
+        .catch((error)=>alert(error))
+    } else {
+        const respuestaPromise = GetAsyncItemsByCategory(catId);
+        respuestaPromise
+        .then((respuesta)=>setProducts(respuesta))
+        .catch((error)=>alert(error))
+    }
+},[catId]);
 
-const list = products.map((prod)=>(
-<Item
-   key={prod.id}
-   price={prod.price}
-   title={prod.title}
-   description={prod.description}
-   pictureUrl={prod.pictureUrl}
-/>
-));
 
 const boxGaleria={
     display: "grid",
     gridTemplateColumns: "repeat(4, 1fr)",
     gap:20,
+    marginTop: 20,
 };
 
  return(
-         <div style={boxGaleria}>{list}</div>
+         <div style={boxGaleria}><ItemList products={products}/></div>
  ); 
 
 };

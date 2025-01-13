@@ -1,28 +1,18 @@
+import{useState, useEffect} from "react";
+import { GetAsyncDataById } from "../data/GetAsyncData";
 import ItemDetail from "./ItemDetail";
-import products from "../data/data"
-
+import { useParams } from "react-router-dom";
 function ItemDetailContainer(){
+       const [itemInfo, setItemInfo] = useState({});
+       const rutaItem = useParams();
+       useEffect(()=>{
+              async function GetItemData(){
+                     const response = await GetAsyncDataById(rutaItem.id);
+                     setItemInfo(response);
+              }
+              GetItemData();
+       },[]);
+       return(<ItemDetail {...itemInfo}/>)
 
-
-
-    
-    const boxGaleria={
-       position: 'relative',
-       top:'50%',
-       left:'50%',
-       zIndex:1,
-};
-
- return(
-         <div style={boxGaleria}>
-        <ItemDetail
-         key={products.id}
-         price={products.price}
-         title={products.title}
-         description={products.description}
-         pictureUrl={products.pictureUrl}
-        />
-        </div>
- ); 
 }
 export default ItemDetailContainer

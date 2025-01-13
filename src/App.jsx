@@ -1,27 +1,19 @@
-import {useState} from "react"
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
- 
-  const stylesHeader={
-    display: "block",
-    background: "#cbc8b6",
-    height:130,
-  };
-
   return (
-    <>
-      <header style={stylesHeader}>
+    <BrowserRouter>
       <Navbar/>
-      </header>
-
-      <main style={{marginTop:"15px"}}>
-      <ItemListContainer/>
-      </main>
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>}/>
+        <Route path="/category/:catId" element={<ItemListContainer/>}/>
+        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
