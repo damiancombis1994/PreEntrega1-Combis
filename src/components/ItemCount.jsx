@@ -1,7 +1,7 @@
 import { useState} from "react";
-import styles from "./buttoncount.module.css";
+import styles from "./itemcount.module.css";
 
-function ButtonCount(props){
+function ItemCount(props){
     let[count, setCount] = useState(1);
 
     const handleAdd = () =>{
@@ -27,4 +27,4 @@ return(
     </>
 );
 }
-export default ButtonCount;
+export default ItemCount;

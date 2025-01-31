@@ -1,5 +1,5 @@
 import styles from "./itemdetail.module.css";
-import ButtonCount from "./ButtonCount";
+import ItemCount from "./ItemCount";
 import cartContext from "../context/cartContext";
 import {useContext} from "react";
 import {useState} from "react";
@@ -26,7 +26,7 @@ return(
                         <div className={styles.boxPrinceCount}>
                             <p className={styles.precioArticulo}> ${price}</p>
                             {AddToCart ? (<Link to="/cart"><button>Ver Carrito</button></Link>)
-                            :(<ButtonCount onSubmitCount={onSubmit} stock={stock} /> )}  
+                            :(<ItemCount onSubmitCount={onSubmit} stock={stock} /> )}  
                             
                             
                         </div>

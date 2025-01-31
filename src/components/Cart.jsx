@@ -1,11 +1,11 @@
-import styles from "./cartcontainer.module.css";
+import styles from "./cart.module.css";
 import cartContext from "../context/cartContext";
 import { useContext } from "react";
 import { createBuyOrder } from "../data/database";
-import CloseIcon from '@mui/icons-material/Close';
-function CartContainer() {
-   const {cartItems, removeItem, getTotalPrice} = useContext(cartContext);
-
+import CartItem from "./CartItem";
+function Cart() {
+   const {cartItems, getTotalPrice} = useContext(cartContext);
+  
    async function handleCheckout() {
     const orderData = {
       buyer: {
@@ -27,22 +27,7 @@ function CartContainer() {
     <> 
     <h1>Carrito</h1>
     <div className={styles.viewCartDiv}> 
-    {cartItems.map((item) => {
-        return (
-            <div className={styles.viewCartItems} key={item.id}>
-                <figure>
-                    <img src={item.pictureUrl} alt="product img"/>
-                </figure>
-                <h2>{item.title}</h2>
-                <p>Precio: ${item.price}</p>
-                <p>Cantidad: {item.count}</p>
-                <CloseIcon className={styles.btnDelete} onClick={() => removeItem(item.id)} />
-               
-                
-            </div>
-        );
-    })
-    }
+          {cartItems.map((item) => (<CartItem key={item.id} {...item} />))}
     </div>
     {cartItems.length === 0 ? 
       (<p className={styles.msjEmptyProduct}>Aun no tienes productos en el Carrito</p>) 
@@ -55,4 +40,4 @@ function CartContainer() {
     </>
    );
 }
-export default CartContainer;
+export default Cart;
