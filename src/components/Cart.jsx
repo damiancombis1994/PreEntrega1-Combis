@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { createBuyOrder } from "../data/database";
 import CartItem from "./CartItem";
 function Cart() {
-   const {cartItems, getTotalPrice} = useContext(cartContext);
+   const {cartItems, getTotalPrice, clearCart} = useContext(cartContext);
   
    async function handleCheckout() {
     const orderData = {
@@ -25,7 +25,11 @@ function Cart() {
   
    return (
     <> 
-    <h1>Carrito</h1>
+    <div className={styles.cartHeader}>
+        <h1>Carrito de Compras</h1>
+        <p onClick={clearCart}>Eliminar carrito</p>
+    </div>
+    
     <div className={styles.viewCartDiv}> 
           {cartItems.map((item) => (<CartItem key={item.id} {...item} />))}
     </div>

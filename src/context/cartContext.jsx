@@ -6,8 +6,9 @@ export function CartContextProvider(props) {
   const [cartItems, setCartItems] = useState([]);
 
   function removeItem(id) {
-    const newCartState = cartItems.filter((item) => item.id !== id);
-    setCartItems(newCartState);
+    setCartItems(cartItems.filter(item => {
+      return item.id !== id;
+    }));
   }
 
   function addItem({ price, id, title, pictureUrl, count }) {
@@ -26,20 +27,21 @@ export function CartContextProvider(props) {
     
   function countItemsInCart() {
     let total = 0;
-    cartItems.forEach((item) => {
+    for (const item of cartItems) {
       total += item.count;
-    });
+    }
     return total;
   }
 
   function getTotalPrice() {
     let totalPrice = 0;
-
-    cartItems.forEach((item) => {
+    for (const item of cartItems) {
       totalPrice += item.count * item.price;
-    });
-
+    }
     return totalPrice;
+  }
+  function clearCart() {  
+    setCartItems([]); 
   }
 
   return (
@@ -50,6 +52,7 @@ export function CartContextProvider(props) {
         addItem,
         removeItem,
         getTotalPrice,
+        clearCart,
       }}
     >
       {props.children}
