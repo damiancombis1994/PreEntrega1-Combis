@@ -2,6 +2,7 @@ import styles from "./cartcontainer.module.css";
 import cartContext from "../context/cartContext";
 import { useContext } from "react";
 import { createBuyOrder } from "../data/database";
+import CloseIcon from '@mui/icons-material/Close';
 function CartContainer() {
    const {cartItems, removeItem, getTotalPrice} = useContext(cartContext);
 
@@ -35,7 +36,9 @@ function CartContainer() {
                 <h2>{item.title}</h2>
                 <p>Precio: ${item.price}</p>
                 <p>Cantidad: {item.count}</p>
-                <button onClick={() => removeItem(item.id)}>Eliminar</button>
+                <CloseIcon className={styles.btnDelete} onClick={() => removeItem(item.id)} />
+               
+                
             </div>
         );
     })
