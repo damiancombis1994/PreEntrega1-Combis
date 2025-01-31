@@ -6,21 +6,22 @@
 .boxArticulo:hover{
     border: 1px solid rgba(125, 5, 134, 0.756);
 }
+
 .fotoVino{
+    object-fit: contain;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: all .5s;
+    height: 100%;
+    border-radius: 5px;
 }
-.boxArticulo figure{
-    overflow: hidden;
-}
-.boxArticulo:hover img{
-    transform: scale(1.2);
+.viewCartItems figure{
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 80%;
+    margin: 0px 0px 5px 0px;
 }
 .boxDetalleArticulo{
-    padding: 15px 30px;
+    padding: 5px 30px;
     line-height: 2;
     display: flex;
     flex-direction: column;
@@ -28,22 +29,34 @@
 }
 .titleArticulo{
     width: 100%;
-    margin-top:-0.2em;
-    font-family: 'Playfair Display SC', serif; 
+    font-family: 'Playfair Display SC', serif;
+    margin: 0px 0px 0px 0px; 
 }
 .textArticulo{
-    margin-top: -1.5em;
+    margin: 0px;
     font-family: 'Kameron', serif; 
     font-size: 17px;
     line-height: 1.2;
 }
-.precioArticulo{
-    width: 4em;
-    margin-top:-0.9em;
-    font-size: 1.5em;
-    font-family: 'Kameron', serif;   
-}
 .boxPrinceCount{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 2em;
+}
+.precioArticulo{
+    width: 4em;
+    font-size: 1.5em;
+    font-family: 'Kameron', serif;   
+    margin: 0px 0px 0px 0px;
+}
+.boxPrinceCount button{
+    width: 80px;
+    height: 2em;
+    margin: 0px 0px 0px 0px;
+    border-radius: 5px;
+    border: none;
+    background-color: #000000;
+    color: #eee;
+    cursor: pointer;
 }

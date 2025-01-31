@@ -14,7 +14,7 @@ return(
                         <p className={styles.textArticulo}>{description}</p>
                         <div className={styles.boxPrinceCount}>
                             <p className={styles.precioArticulo}> ${price}</p>
-                            <Link to={"/item/" + id}><button>Ver detalle</button></Link>
+                            <Link to={"/item/" + id}><button>Ver Detalle</button></Link>
                         </div>
                        
                     </div>  
