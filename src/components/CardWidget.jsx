@@ -1,6 +1,9 @@
 import styles from "./cardwidget.module.css";
+import cartContext from "../context/cartContext"
+import { useContext } from "react";
 
 function CardWidget(){
+    const context = useContext(cartContext);
 
 return(
     <div className={styles.boxCardWidget}>
@@ -11,7 +14,7 @@ return(
     <path d="M17 17h-11v-14h-2" />
     <path d="M6 5l14 1l-1 7h-13" />
     </svg>
-    <p className={styles.cantCarrito}> 10 </p>
+    <p className={styles.cantCarrito}> {context.countItemsInCart()} </p>
     </div>  
 );
 }

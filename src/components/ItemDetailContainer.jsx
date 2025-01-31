@@ -1,9 +1,11 @@
 import{useState, useEffect} from "react";
-import { GetAsyncDataById } from "../data/GetAsyncData";
+import { GetAsyncDataById } from "../data/database";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
+import products from "../data/data";
 function ItemDetailContainer(){
-       const [itemInfo, setItemInfo] = useState({});
+       const [itemInfo, setItemInfo] = useState(null);
        const rutaItem = useParams();
        useEffect(()=>{
               async function GetItemData(){
@@ -12,7 +14,8 @@ function ItemDetailContainer(){
               }
               GetItemData();
        },[]);
-       return(<ItemDetail {...itemInfo}/>)
+       if(itemInfo) return (<ItemDetail {...itemInfo}/>)
+       else return (<Loader/>)
 
 }
 export default ItemDetailContainer

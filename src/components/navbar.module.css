@@ -13,10 +13,15 @@
     flex-basis: 10em;
     font-family: 'Playfair Display SC', serif; 
     color: #fafafa;
-    
 }
 .title a{
     text-decoration: none;
+    color: #fafafa;
+    position: relative;
+    bottom: 15px;
+}
+.enlaceCart{
+     text-decoration: none;
     color: #fafafa;
 }
 

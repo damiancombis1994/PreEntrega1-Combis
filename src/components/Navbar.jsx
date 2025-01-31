@@ -7,7 +7,7 @@ return(
 <>
 <div className={styles.flexContainer}>
 <h1 className={styles.title}><Link to="/">Nuke Mapu </Link></h1>
-<CardWidget/>
+<Link className={styles.enlaceCart} to="/cart"><CardWidget/></Link>
 </div>
 
 <nav>
