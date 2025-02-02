@@ -20,6 +20,7 @@ function Cart() {
     const newOrderID = await createBuyOrder(orderData);
 
     console.log("Compra realizada", newOrderID);
+    clearCart();
   }
 
   
@@ -27,7 +28,7 @@ function Cart() {
     <> 
     <div className={styles.cartHeader}>
         <h1>Carrito de Compras</h1>
-        <p onClick={clearCart}>Eliminar carrito</p>
+        <p style={cartItems.length === 0 ? {display: "none"} : {display: "inlineBlock"}} onClick={clearCart}>Eliminar carrito</p>
     </div>
     
     <div className={styles.viewCartDiv}> 
