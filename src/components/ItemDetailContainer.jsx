@@ -3,7 +3,6 @@ import { GetAsyncDataById } from "../data/database";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
-import products from "../data/data";
 function ItemDetailContainer(){
        const [itemInfo, setItemInfo] = useState(null);
        const rutaItem = useParams();

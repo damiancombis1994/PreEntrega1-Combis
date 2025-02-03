@@ -68,5 +68,8 @@
   font-size: 18px;
   font-family: 'Mulish', sans-serif;  
 }
+.checkoutButton:hover{
+    cursor: pointer;
+}
 
 

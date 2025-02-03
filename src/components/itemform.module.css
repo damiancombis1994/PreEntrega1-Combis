@@ -1,0 +1,15 @@
+.contItemForm{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 10px;
+    width: 500px;
+}
+.contItemForm label{
+   font-family: Georgia, Times, 'Times New Roman', serif;
+    margin: 0px 10px;
+    text-align: center;
+}
+.contItemForm input{
+    font-family: 'Playfair Display SC';
+    height: 20px;
+}

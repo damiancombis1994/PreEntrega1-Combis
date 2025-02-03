@@ -1,29 +1,10 @@
 import styles from "./cart.module.css";
 import cartContext from "../context/cartContext";
 import { useContext } from "react";
-import { createBuyOrder } from "../data/database";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 function Cart() {
    const {cartItems, getTotalPrice, clearCart} = useContext(cartContext);
-  
-   async function handleCheckout() {
-    const orderData = {
-      buyer: {
-        name: "Bruno",
-        email: "brunitotutor@yahoo",
-      },
-      items: cartItems,
-      total: getTotalPrice(),
-      date: new Date(),
-    };
-
-    const newOrderID = await createBuyOrder(orderData);
-
-    console.log("Compra realizada", newOrderID);
-    clearCart();
-  }
-
-  
    return (
     <> 
     <div className={styles.cartHeader}>
@@ -39,7 +20,7 @@ function Cart() {
       :
       (<div className={styles.checkoutContainer}>          
           <p className={styles.totalPrice}>Total: ${getTotalPrice()}</p>
-          <button className={styles.checkoutButton} onClick={handleCheckout}>Finalizar Compra</button>
+          <Link to="/CheckoutForm"><button className={styles.checkoutButton} >Finalizar Compra</button></Link>
       </div>)
     }
     </>

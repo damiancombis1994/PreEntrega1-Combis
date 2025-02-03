@@ -1,0 +1,68 @@
+.containerForm{
+    display: flex;
+    position: relative;
+    top: 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 200px; 
+}
+.containerForm h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'roboto', sans-serif;
+    font-weight: 200;
+    background-color: black;
+    color: #ffffff;
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border-radius: 12px;
+}
+.containerForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.containerForm button{
+    width: 120px;
+    height: 30px;
+    margin: 10px 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 12px;
+    border: 1px solid rgb(0, 0, 0);
+}
+.contTicket {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 400px;  
+  }
+  
+  .contTicket div { 
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    text-align: center; 
+  }
+  .contTicket h1 {
+    color: #333;
+  }
+  
+  .contTicket p {
+    margin-bottom: 10px;
+  }
+  
+  .contTicket button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
