@@ -9,7 +9,9 @@ function Cart() {
     <> 
     <div className={styles.cartHeader}>
         <h1>Carrito de Compras</h1>
-        <p style={cartItems.length === 0 ? {display: "none"} : {display: "inlineBlock"}} onClick={clearCart}>Eliminar carrito</p>
+        {
+            cartItems.length > 0 && <p onClick={clearCart}>Eliminar carrito</p>
+        }
     </div>
     
     <div className={styles.viewCartDiv}> 
